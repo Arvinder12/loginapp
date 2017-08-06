@@ -1,0 +1,29 @@
+syntax ="proto3";
+
+package protos;
+
+service EmployeeService {
+
+    rpc getAllEmployee(EmployeeDeptRequest) returns (AllEmployeeResponse) {}
+    rpc getEmployeeDetails(EmployeeRequest) returns (EmployeeResponse) {}
+
+}
+
+message EmployeeRequest {
+        string empid = 1;
+}
+
+message EmployeeResponse {
+        string empid = 1;
+        string name = 2;
+        string dept = 3;
+}
+
+message EmployeeDeptRequest {
+     string dept = 1;
+}
+
+message AllEmployeeResponse {
+
+    repeated string empid = 1;
+}
